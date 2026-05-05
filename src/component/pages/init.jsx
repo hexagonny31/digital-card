@@ -17,8 +17,6 @@ function Init() {
             clearTimeout(timer);
             const s = document.getElementById(scriptId);
             if (s) s.remove();
-            const vfxCanvas = document.querySelector('canvas');
-            if (vfxCanvas) vfxCanvas.remove();
 
             const vfxCanvas = document.querySelector('canvas');
             if (vfxCanvas) vfxCanvas.remove();
