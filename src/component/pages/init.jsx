@@ -35,7 +35,7 @@ function Init() {
     return(
         <section className="last">
             <img src="./972-800x600.jpg"/>  
-            <h2 data-z="1">let's all love lain.</h2>
+            <h2 data-z="1">lets all love lain.</h2>
         </section>
     );
 }
