@@ -7,7 +7,7 @@ function Init() {
         const scriptId = 'vfx-init-script';
         const script = document.createElement('script');
         script.id = scriptId;
-        script.src = '/src/js/init.js';
+        script.src = '/digital-card/src/js/init.js';
         script.type = "module";
         document.body.appendChild(script);
 
