@@ -150,15 +150,13 @@ const vfx = new VFX({
   postEffect: { shader } 
 });
 
-window.addEventListener('load', function () {
-  let i = 0;
-  for (const e of document.querySelectorAll('img,h1,h2,p')) {
-    const z = e.getAttribute('data-z');
-    vfx.add(e, { // no await but it's ok
-      shader: shader2,
-      uniforms: { id: i++ },
-      zIndex: z ? parseInt(z) : 0,
-      // overlay: true,
-    });
-  }    
-});
+let i = 0;
+for (const e of document.querySelectorAll('img,h1,h2,p')) {
+  const z = e.getAttribute('data-z');
+  vfx.add(e, { // no await but it's ok
+    shader: shader2,
+    uniforms: { id: i++ },
+    zIndex: z ? parseInt(z) : 0,
+    // overlay: true,
+  });
+}

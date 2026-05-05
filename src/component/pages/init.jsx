@@ -5,20 +5,20 @@ import '../../css/init.css';
 function Init() {
     useEffect(() => {
         const scriptId = 'vfx-init-script';
-        const script = document.createElement('script');
-        script.id = scriptId;
-        script.src = '/digital-card/js/init.js';
-        script.type = "module";
-        document.body.appendChild(script);
+        const timer = setTimeout(() => {
+            const script = document.createElement('script');
+            script.id = scriptId;
+            script.src = `/digital-card/js/init.js?t=${Date.now()}`; 
+            script.type = "module";
+            document.body.appendChild(script);
+        }, 50);
 
         return () => {
+            clearTimeout(timer);
             const s = document.getElementById(scriptId);
             if (s) s.remove();
-
-            const vfxCanvas = document.querySelector('canvas[style*="pointer-events: none"]');
-            if (vfxCanvas) {
-                vfxCanvas.remove();
-            }
+            const vfxCanvas = document.querySelector('canvas');
+            if (vfxCanvas) vfxCanvas.remove();
         };
     }, []);
 
